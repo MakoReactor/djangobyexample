@@ -105,7 +105,7 @@ STATIC_URL = '/static/'
 
 # Email settings
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'douglas.santosb@gmail.com'
-EMAIL_HOST_PASSWORD = 'D0ugl45makubex'
+EMAIL_HOST_USER = 'your_email@gmail.com'
+EMAIL_HOST_PASSWORD = 'your_password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
