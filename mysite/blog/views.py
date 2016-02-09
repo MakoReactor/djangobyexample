@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-# from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post, Comment
 from django.views.generic import ListView
 from .forms import EmailPostForm, CommentForm
@@ -20,10 +20,10 @@ def post_list(request, tag_slug=None):
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
-        # if page is not an integer deliver the first page
+        # If page is not an integer deliver the first page
         posts = paginator.page(1)
     except EmptyPage:
-        # if page is out of range deliver last page or results
+        # If page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
     return render(request, 'blog/post/list.html', {'page': page,
                                                    'posts': posts,
